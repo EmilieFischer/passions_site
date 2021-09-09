@@ -10,16 +10,30 @@
 
   <body>
     <header>
-      <h1>Wall Up</h1>
-    </header>
+        <ul>
+          <li><a href="">Forside</a></li>
+          <li><a href="">Shop</a></li>
+          <li>
+            <a href="forside.html"
+              ><img src="" alt="wall up logo"
+            /></a>
+          </li>
+          <li><a href="">Kontakt</a></li>
+          <li><a href="">"søg"</a></li>
+          <li><a href="">"køb"</a></li>
+        </ul>
+      </nav>    </header>
+
     <h2>Alle Plakater</h2>
     <nav>
       <button data-retter="alle" class="valgt">Alle</button>
-      <button data-retter="forretter">Forretter</button>
-      <button data-retter="hovedretter">Hovedretter</button>
-      <button data-retter="sideorders">Sideorders</button>
-      <button data-retter="desserter">Desserter</button>
-      <button data-retter="drikkevarer">Drikkevarer</button>
+      <button data-retter="forretter">Astro</button>
+      <button data-retter="hovedretter">Dyr</button>
+      <button data-retter="sideorders">Mennesker</button>
+      <button data-retter="desserter">Minimalisme</button>
+      <button data-retter="drikkevarer">Sort/hvid</button>
+      <button data-retter="drikkevarer">Kunst</button>
+      <button data-retter="drikkevarer">Landskab</button>
     </nav>
 
     <section class="data-container"></section>
@@ -35,7 +49,7 @@
     </template>
 
     <script>
-      let retter;
+      let billeder;
       let container = document.querySelector("section");
       let temp = document.querySelector("template").content;
       const filterKnapper = document.querySelectorAll("nav button");
@@ -55,13 +69,13 @@
         const filterKnapper = document.querySelectorAll("nav button");
 
         filterKnapper.forEach((knap) =>
-          knap.addEventListener("click", filtrerRetter)
+          knap.addEventListener("click", filtrerBilleder)
         );
         hentdata();
       }
 
-      function filtrerRetter() {
-        filter = this.dataset.retter;
+      function filtrerBilleder() {
+        filter = this.dataset.billeder;
         document.querySelector(".valgt").classList.remove("valgt");
         this.classList.add("valgt");
         console.log(filter);
@@ -71,15 +85,15 @@
 
       async function hentdata() {
         const JSONData = await fetch(url, options);
-        retter = await JSONData.json();
-        console.log(retter);
+        billeder = await JSONData.json();
+        console.log(billeder);
         visListe();
       }
 
       function visListe() {
         container.textContent = "";
 
-        retter.forEach((ret) => {
+        billeder.forEach((ret) => {
           if (filter == ret.kategori || filter == "alle") {
             let klon = temp.cloneNode(true);
             klon.querySelector("h3").textContent = ret.navn;
