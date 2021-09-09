@@ -13,6 +13,21 @@
     <title>Passions Forside</title>
     <link rel="stylesheet" href="forside.css" />
     <link rel="stylesheet" href="mututal.css" />
+    <style>
+      #popular_motiv {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+      }
+
+      #popular_motiv img {
+        height: 22rem;
+        width: 16rem;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        justify-content: center;
+      }
+    </style>
   </head>
 
   <body>
@@ -43,6 +58,12 @@
     </header>
     <main>
       <h2>Populære Motiver</h2>
+      <section id="popular_motiv">
+        <img src="img/insp1.jpg" alt="pic1" />
+        <img src="img/insp2.jpg" alt="pic2" />
+        <img src="img/insp3.jpg" alt="pic3" />
+        <img src="img/insp4.jpg" alt="pic4" />
+      </section>
       <h3>Populære Motiver</h3>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, repellendus
