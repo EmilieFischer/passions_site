@@ -1,41 +1,90 @@
 <!DOCTYPE html>
 <html lang="da">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100&display=swap"
+      rel="stylesheet"
+    />
     <title>Passions Forside</title>
-    <style>
-        img {
-            height: 7rem;
-        }
+    <link rel="stylesheet" href="forside.css" />
+    <!-- <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-        .hoved_nav {
-            display: flex;
-        }
+      .logo {
+        height: 8rem;
+        margin-left: 10rem;
+        margin-right: 10rem;
+        padding-top: 1rem;
+        width: auto;
+        margin-bottom: 1rem;
+      }
 
-    </style>
-</head>
+      .splashholder {
+        max-height: 70vh;
+        overflow: hidden;
+      }
+      .splashholder img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
 
-<body>
+      nav a {
+        font-family: "Urbanist", sans-serif;
+        color: black;
+        text-decoration: none;
+        font-size: 1.1rem;
+      }
+
+      .hoved_nav {
+        display: flex;
+        place-content: center;
+      }
+
+      .lille_nav {
+        display: flex;
+        place-self: center;
+        gap: 6rem;
+      }
+
+      .lille_nav2 {
+        display: flex;
+        place-self: center;
+        gap: 6rem;
+      }
+    </style> -->
+  </head>
+
+  <body>
     <header>
-
-    <nav class="hoved_nav">
+      <nav class="hoved_nav">
         <nav class="lille_nav">
-        <a href="forside.html">Forside</a>
-        <a href="passionShop.html">Shop</a>
-        <a href="designere.html">Designere</a>
-    </nav>
+          <a href="forside.html">Forside</a>
+          <a href="passionShop.html">Shop</a>
+          <a href="designere.html">Designere</a>
+        </nav>
         <a href="forside.html">
-            <img src="img/wallup_logo.svg" alt="logo">
+          <img src="img/wallup_logo.svg" alt="logo" class="logo" />
         </a>
-        <a href="kontakt.html">Kontakt</a>
-        <img src="" alt="søgefunktion">
-        <img src="" alt="indkøbskurv">
-    </nav>
+        <nav class="lille_nav2">
+          <a href="kontakt.html">Kontakt</a>
+          <a href="kontakt.html">Kontakt</a>
+          <a href="kontakt.html">Kontakt</a>
+        </nav>
+      </nav>
+      <div class="splashholder">
+        <img src="img/splashbillede.jpg" alt="splashbillede" />
+      </div>
     </header>
-    <main>
-
-    </main>
-</body>
+    <main></main>
+  </body>
 </html>
