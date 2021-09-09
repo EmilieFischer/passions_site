@@ -6,9 +6,25 @@
   padding: 0;
 }
 
-main {
+/* main {
   display: grid;
   grid-template-columns: 1fr minmax(0, 1000px) 1fr;
+} */
+
+h2 {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+
+h3 {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
 }
 
 /* styling og placering af logo */
