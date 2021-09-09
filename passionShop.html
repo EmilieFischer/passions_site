@@ -6,34 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Passions Website</title>
     <link rel="stylesheet" href="passionShop.css" />
+    <link rel="stylesheet" href="mututal.css" />
   </head>
 
   <body>
     <header>
-        <ul>
-          <li><a href="">Forside</a></li>
-          <li><a href="">Shop</a></li>
-          <li>
-            <a href="forside.html"
-              ><img src="" alt="wall up logo"
-            /></a>
-          </li>
-          <li><a href="">Kontakt</a></li>
-          <li><a href="">"søg"</a></li>
-          <li><a href="">"køb"</a></li>
-        </ul>
-      </nav>    </header>
+      <nav class="hoved_nav">
+        <nav class="lille_nav">
+          <a href="forside.html">Forside</a>
+          <a href="passionShop.html">Shop</a>
+          <a href="designere.html">Designere</a>
+        </nav>
+        <a href="forside.html">
+          <img src="img/wallup_logo.svg" alt="logo" class="logo" />
+        </a>
+        <nav class="lille_nav2">
+          <a href="kontakt.html">Kontakt</a>
+          <a href="kontakt.html">Kontakt</a>
+          <a href="kontakt.html">Kontakt</a>
+        </nav>
+      </nav>
+    </header>
 
     <h2>Alle Plakater</h2>
     <nav>
-      <button data-retter="alle" class="valgt">Alle</button>
-      <button data-retter="forretter">Astro</button>
-      <button data-retter="hovedretter">Dyr</button>
-      <button data-retter="sideorders">Mennesker</button>
-      <button data-retter="desserter">Minimalisme</button>
-      <button data-retter="drikkevarer">Sort/hvid</button>
-      <button data-retter="drikkevarer">Kunst</button>
-      <button data-retter="drikkevarer">Landskab</button>
+      <button data-retter="alle" class="valgt"><p>Alle</p></button>
+      <button data-retter="forretter"><p>Astro</p></button>
+      <button data-retter="hovedretter"><p>Dyr</p></button>
+      <button data-retter="sideorders"><p>Mennesker</p></button>
+      <button data-retter="desserter"><p>Minimalisme</p></button>
+      <button data-retter="drikkevarer"><p>Sort/hvid</p></button>
+      <button data-retter="drikkevarer"><p>Kunst</p></button>
+      <button data-retter="drikkevarer"><p>Landskab</p></button>
     </nav>
 
     <section class="data-container"></section>
@@ -97,8 +101,7 @@
           if (filter == ret.kategori || filter == "alle") {
             let klon = temp.cloneNode(true);
             klon.querySelector("h3").textContent = ret.navn;
-            klon.querySelector("img").src =
-              "bistro/" + ret.billednavn + "-md.jpg";
+            klon.querySelector("img").src = "bistro/" + ret.billednavn;
             klon.querySelector(".billednavn").textContent = ret.billednavn;
             klon.querySelector(".kortbeskrivelse").textContent =
               ret.kortbeskrivelse;
