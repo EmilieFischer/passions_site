@@ -25,6 +25,7 @@ body {
 #right img {
   height: 250px;
   padding: 100x;
+  margin-right: 500px;
 }
 
 #tekst {
@@ -43,6 +44,18 @@ h5 {
   font-size: 3rem;
   line-height: 130%;
   padding-bottom: 50px;
+}
+
+h3 {
+  font-family: "Urbanist", sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding-bottom: 5px;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
 }
 
 /*CONTACT FORM START*/
@@ -69,11 +82,11 @@ button {
   border: 3px solid #eb7c63;
 }
 
-button:hover {
+#left button:hover {
   background: #eb7c63;
   color: white;
 }
-button:active {
+#left button:active {
   background: #bb543d;
 }
 
