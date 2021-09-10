@@ -54,6 +54,13 @@ p {
   grid-column: 1/2;
 }
 
+.lille_nav img {
+  width: 14vw;
+height: auto;
+padding: 5vw;
+padding: 3vw;
+}
+
 nav a {
   grid-column: 2/3;
   font-family: "Urbanist", sans-serif;
