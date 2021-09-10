@@ -25,19 +25,21 @@
     <header>
       <nav class="hoved_nav">
         <nav class="lille_nav">
-          <a href="forside.html">Forside</a>
-          <a href="passionShop.html">Shop</a>
-          <a href="designere.html">Designere</a>
+          <a href="kontakt.html">Kontakt</a>
+          <a href="kontakt.html">Kontakt</a>
         </nav>
+
         <a href="forside.html">
           <img src="img/wallup_logo.svg" alt="logo" class="logo" />
         </a>
-        <nav class="lille_nav2">
-          <a href="kontakt.html">Kontakt</a>
-          <a href="kontakt.html">Kontakt</a>
-          <a href="kontakt.html">Kontakt</a>
-        </nav>
+        <button id="menuknap">☰</button>
+        <ul id="menu" class="hidden">
+          <li><a href="forside.html">Forside</a></li>
+          <li><a href="passionShop.html">Shop</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
       </nav>
+
       <article id="rabat_boks">
         <h3>35% RABAT PÅ ALLE PLAKATER</h3>
         <p class="lille_p">Gælder ikke nyeste varer, slutter 1/10</p>
@@ -48,13 +50,14 @@
           PLAKATER TIL DIN PERFEKTE <br />
           BILLEDEVÆG
         </p>
-        <button>SHOP HER</button>
+        <button class="shopknap">SHOP HER</button>
       </div>
     </header>
+
     <main>
       <h2>Populære Motiver</h2>
       <section id="popular_motiv">
-        <img src="content_billeder/doer.jpg" alt="pic1" />
+        <img src="content_billeder/oeje.jpg" alt="pic1" />
         <img src="content_billeder/strand.jpg" alt="pic2" />
         <img src="content_billeder/plante.jpg" alt="pic3" />
         <img src="content_billeder/sten.jpg" alt="pic4" />
@@ -67,5 +70,23 @@
       </section>
     </main>
     <footer></footer>
+
+    <script>
+      window.addEventListener("load", sidenVises);
+
+      function sidenVises() {
+        console.log("sidenVises");
+
+        document
+          .querySelector("#menuknap")
+          .addEventListener("click", toggleMenu);
+      }
+
+      function toggleMenu() {
+        console.log("toggleMenu");
+
+        document.querySelector("#menu").classList.toggle("hidden");
+      }
+    </script>
   </body>
 </html>
