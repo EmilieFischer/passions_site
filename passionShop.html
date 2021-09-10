@@ -13,23 +13,24 @@
     <header>
       <nav class="hoved_nav">
         <nav class="lille_nav">
-          <a href="forside.html">Forside</a>
-          <a href="passionShop.html">Shop</a>
-          <a href="designere.html">Designere</a>
+          <a href="kontakt.html">Kontakt</a>
+          <a href="kontakt.html">Kontakt</a>
         </nav>
+
         <a href="forside.html">
           <img src="img/wallup_logo.svg" alt="logo" class="logo" />
         </a>
-        <nav class="lille_nav2">
-          <a href="kontakt.html">Kontakt</a>
-          <a href="kontakt.html">Kontakt</a>
-          <a href="kontakt.html">Kontakt</a>
-        </nav>
+        <button id="menuknap">☰</button>
+        <ul id="menu" class="hidden">
+          <li><a href="forside.html">Forside</a></li>
+          <li><a href="passionShop.html">Shop</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
       </nav>
     </header>
 
     <h2>Alle Plakater</h2>
-    <nav>
+    <nav class="hover_button">
       <button data-kategori="alle" class="valgt"><p>Alle</p></button>
       <button data-kategori="astro"><p>Astro</p></button>
       <button data-kategori="dyr"><p>Dyr</p></button>
@@ -114,6 +115,21 @@
       }
       function visDetaljer(hvem) {
         location.href = `singel_side_shop.html?id=${hvem._id}`;
+      }
+      window.addEventListener("load", sidenVises);
+
+      function sidenVises() {
+        console.log("sidenVises");
+
+        document
+          .querySelector("#menuknap")
+          .addEventListener("click", toggleMenu);
+      }
+
+      function toggleMenu() {
+        console.log("toggleMenu");
+
+        document.querySelector("#menu").classList.toggle("hidden");
       }
     </script>
   </body>
