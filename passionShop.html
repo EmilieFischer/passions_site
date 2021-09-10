@@ -30,14 +30,14 @@
 
     <h2>Alle Plakater</h2>
     <nav>
-      <button data-retter="alle" class="valgt"><p>Alle</p></button>
-      <button data-retter="forretter"><p>Astro</p></button>
-      <button data-retter="hovedretter"><p>Dyr</p></button>
-      <button data-retter="sideorders"><p>Mennesker</p></button>
-      <button data-retter="desserter"><p>Minimalisme</p></button>
-      <button data-retter="drikkevarer"><p>Sort/hvid</p></button>
-      <button data-retter="drikkevarer"><p>Kunst</p></button>
-      <button data-retter="drikkevarer"><p>Landskab</p></button>
+      <button data-kategori="alle" class="valgt"><p>Alle</p></button>
+      <button data-kategori="astro"><p>Astro</p></button>
+      <button data-kategori="dyr"><p>Dyr</p></button>
+      <button data-kategori="mennesker"><p>Mennesker</p></button>
+      <button data-kategori="minimalistisk"><p>Minimalisme</p></button>
+      <button data-kategori="sort-hvid"><p>Sort/hvid</p></button>
+      <button data-kategori="kunst"><p>Kunst</p></button>
+      <button data-kategori="landskab"><p>Landskab</p></button>
     </nav>
 
     <section class="data-container"></section>
@@ -45,8 +45,6 @@
       <article id="liste">
         <img src="" alt="" />
         <h3></h3>
-        <p class="billednavn"></p>
-        <p class="kategori"></p>
         <p class="kortbeskrivelse"></p>
         <p class="pris"></p>
       </article>
@@ -59,10 +57,10 @@
       const filterKnapper = document.querySelectorAll("nav button");
       const navOverskrift = document.querySelector("h2");
 
-      const url = "https://tema7-4228.restdb.io/rest/plakater?max=2";
+      const url = "https://tema7-4228.restdb.io/rest/plakater";
       const options = {
         headers: {
-          "x-apikey": "1fda9056ee688a0f8c0b3487e3c153ffea88c",
+          "x-apikey": "613a090d43cedb6d1f97eefc",
         },
       };
 
@@ -79,7 +77,7 @@
       }
 
       function filtrerBilleder() {
-        filter = this.dataset.billeder;
+        filter = this.dataset.kategori;
         document.querySelector(".valgt").classList.remove("valgt");
         this.classList.add("valgt");
         console.log(filter);
@@ -100,18 +98,22 @@
         billeder.forEach((ret) => {
           if (filter == ret.kategori || filter == "alle") {
             let klon = temp.cloneNode(true);
-            klon.querySelector("h3").textContent = ret.navn;
-            klon.querySelector("img").src = "bistro/" + ret.billednavn;
-            klon.querySelector(".billednavn").textContent = ret.billednavn;
+
+            klon.querySelector("img").src =
+              "content_billeder/" + ret.billedenavn + ".jpg";
             klon.querySelector(".kortbeskrivelse").textContent =
               ret.kortbeskrivelse;
             klon.querySelector(".pris").textContent = "Pris: " + ret.pris;
-            klon.querySelector("article").addEventListener("click", () => {
-              location.href = "bistro-single.html?id=" + ret._id;
-            });
+            klon
+              .querySelector("#liste")
+              .addEventListener("click", () => visDetaljer(ret));
+
             container.appendChild(klon);
           }
         });
+      }
+      function visDetaljer(hvem) {
+        location.href = `singel_side_shop.html?id=${hvem._id}`;
       }
     </script>
   </body>

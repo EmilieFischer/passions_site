@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .liste img {
+      display: block;
+      width: 400px;
+      max-width: 100%;
+      object-fit: cover;
+      aspect-ratio: 16/20;
+      border: solid 1px black;
+    }
+    p {
+      text-align: end;
+      padding-top: 9px;
+    }
+    #single_side {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 5px;
+      place-items: center;
+    }
+    .liste {
+      padding-top: 26px;
+    }
+
+    button {
+      background-color: white;
+      border: solid 3px #eb7c63;
+
+      font-family: "BitterRoman-Regular", serif;
+    }
+    button p {
+      padding: 0;
+    }
+    button:hover {
+      background-color: #eb7c63;
+      color: white;
+    }
+  </style>
+  <body id="single_side">
+    <main>
+      <button>Tilbage</button>
+      <article class="liste">
+        <img src="" alt="" />
+        <h3></h3>
+        <p class="kortbeskrivelse"></p>
+        <p class="pris"></p>
+      </article>
+    </main>
+  </body>
+</html>
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const id = urlParams.get("id");
+  let billeder;
+
+  const url = "https://tema7-4228.restdb.io/rest/plakater/";
+  const options = {
+    headers: {
+      "x-apikey": "613a090d43cedb6d1f97eefc",
+    },
+  };
+  document.addEventListener("DOMContentLoaded", hentdata);
+  async function hentdata() {
+    const resultat = await fetch(url + id, options);
+    billeder = await resultat.json();
+    visListe();
+
+    // console.log(json);
+  }
+
+  function visListe() {
+    document.querySelector("img").src =
+      "content_billeder/" + billeder.billedenavn + ".jpg";
+    document.querySelector(".kortbeskrivelse").textContent =
+      billeder.kortbeskrivelse;
+    document.querySelector(".pris").textContent = "Pris: " + billeder.pris;
+  }
+  document.querySelector("button").addEventListener("click", () => {
+    window.history.back();
+  });
+</script>
