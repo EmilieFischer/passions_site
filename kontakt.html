@@ -1,11 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="kontakt.css" />
+    <link rel="stylesheet" href="mututal.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter&family=Montserrat&family=Urbanist&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <nav class="hoved_nav">
+        <nav class="lille_nav">
+          <a href="forside.html">Forside</a>
+          <a href="passionShop.html">Shop</a>
+          <a href="designere.html">Designere</a>
+        </nav>
+        <a href="forside.html">
+          <img src="img/wallup_logo.svg" alt="logo" class="logo" />
+        </a>
+        <nav class="lille_nav2">
+          <a href="kontakt.html">Kontakt</a>
+          <a href="#">
+            <img src="img/soeg.svg" alt="søg" width="20px" class="soeg" />
+          </a>
+          <a href="#">
+            <img
+              src="img/indkøbskurv.svg"
+              alt="søg"
+              width="20px"
+              class="soeg"
+            />
+          </a>
+        </nav>
+      </nav>
+    </header>
+    <div id="container">
+      <div id="left">
+        <h5>
+          Har du<br />
+          spørgsmål?<br />
+          Kontakt<br />
+          os her.
+        </h5>
+
+        <!-- <div id="contact">Kontakt</div> -->
+
+        <button id="kontakt-knap">Kontakt</button>
+
+        <div id="kontaktform">
+          <h1>Skriv til os!</h1>
+          <small>Vi vender tilbage så hurtigt vi kan.</small>
+
+          <form action="#">
+            <input placeholder="Name" type="text" />
+            <input placeholder="Email" type="email" />
+            <input placeholder="Subject" type="text" />
+            <textarea placeholder="Comment"></textarea>
+            <input class="send" type="submit" />
+            <button id="luk-knap">&times;</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="right">
+        <div id="tekst">
+          <img src="img/logo_vandmaerke.svg" alt="logo" class="logo" />
+
+          <h1>Hvem er Wall Up?</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+            sapiente error asperiores expedita officiis earum recusandae alias
+            quasi! Accusamus, repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum
+            impedit aliquid porro nisi laboriosam aperiam! Earum exercitationem,
+            numquam.  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum
+            impedit aliquid porro nisi laboriosam aperiam! Earum exercitationem,
+            numquam.
+          </p>
+        </div>
+      
+    </div>
+   </div>
+
+    <div id="bottom">
+      <div id="bottom-container">
+        <h3>Forsendelse</h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum
+          impedit aliquid porro nisi laboriosam aperiam! Earum exercitationem,
+          numquam.
+        </p>
+
+        <h3>Returnering</h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum
+          impedit aliquid porro nisi laboriosam aperiam! Earum exercitationem,
+          numquam saepe cum facere officia quia, ut sunt sint odit magnam harum
+          nam quaerat voluptas quas tenetur quidem aut natus consequuntur
+          obcaecati vitae, odio blanditiis deleniti. Itaque ipsa quaerat, ex rem
+          nihil quos?
+        </p>
+      </div>
+    <script src="kontakt.js"></script>
+  </body>
 </html>

@@ -1,0 +1,136 @@
+body {
+}
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#left {
+  min-height: 100px;
+  /* display: flex;
+  flex-direction: column;*/
+  justify-content: center;
+  text-align: left;
+  place-self: center;
+}
+
+#right {
+  place-self: center;
+  min-height: 100px;
+  justify-content: center;
+}
+#right img {
+  height: 250px;
+  padding: 100x;
+}
+
+#tekst {
+  padding: 30px;
+}
+
+h1 {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+}
+
+h5 {
+  color: #363535;
+  font-family: "Urbanist", sans-serif;
+  font-size: 3rem;
+  line-height: 130%;
+  padding-bottom: 50px;
+}
+
+/*CONTACT FORM START*/
+@import "https://fonts.googleapis.com/css?family=Raleway";
+* {
+  box-sizing: border-box;
+}
+#left {
+  margin: 0;
+  padding: 0;
+  font-family: "Bitter", serif;
+  text-transform: uppercase;
+}
+h1 {
+  margin: 0;
+}
+
+button {
+  width: 120px;
+  height: 30px;
+  line-height: 25px;
+  text-align: center;
+  cursor: pointer;
+  border: 3px solid #eb7c63;
+}
+
+button:hover {
+  background: #eb7c63;
+  color: white;
+}
+button:active {
+  background: #bb543d;
+}
+
+button #kontakt-knap {
+  margin-top: 50px;
+}
+
+#kontaktform {
+  position: fixed;
+  display: none;
+  border: 6px solid salmon;
+  padding: 2em;
+  width: 400px;
+  text-align: center;
+  background: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  -webkit-transform: translate(-50%, -50%);
+}
+
+input,
+textarea {
+  margin: 0.8em auto;
+  font-family: inherit;
+  text-transform: inherit;
+  font-size: inherit;
+  display: block;
+  width: 280px;
+  padding: 0.4em;
+}
+textarea {
+  height: 80px;
+  resize: none;
+}
+
+.send {
+  width: 140px;
+  display: inline-block;
+  background: #eb7c63;
+  color: #fff;
+  font-weight: 100;
+  font-size: 1.2em;
+  border: none;
+  height: 30px;
+}
+
+/*CONTACT FORM DONE*/
+
+#bottom {
+  width: 100%;
+  background: #eb7c63;
+  color: #fff;
+  grid-row: 2;
+}
+
+#bottom-container {
+  padding: 80px;
+}
