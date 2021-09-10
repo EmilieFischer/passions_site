@@ -4,7 +4,7 @@
   max-width: 100%;
   object-fit: cover;
   aspect-ratio: 16/20;
-  border: solid 1px black;
+  border: solid 2px black;
 }
 #menuknap:hover {
   background-color: none;
