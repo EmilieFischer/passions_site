@@ -1,22 +1,27 @@
-img {
+#liste img {
   display: block;
   width: 400px;
   max-width: 100%;
   object-fit: cover;
-  aspect-ratio: 16/9;
-  margin-bottom: 2rem;
+  aspect-ratio: 16/20;
+  border: solid 1px black;
 }
 
+.box {
+  width: 100%;
+  height: 40px;
+  border: solid 4px #eb7c63;
+}
 .valgt {
   color: black;
-  background: rgba(114, 155, 114, 0.541);
+  background: e4654f;
 }
 
 #liste {
   max-width: 300px;
-  margin-bottom: 0.5rem;
-  box-shadow: -8px 5px 16px -9px rgba(0, 0, 0, 0.55);
+  margin-bottom: 2.5rem;
   padding: 0.5rem;
+  z-index: 10;
 }
 
 h1 {
@@ -38,8 +43,8 @@ h3 {
 }
 
 p {
-  font-family: "Open Sans", sans-serif;
-  padding-left: 1rem;
+  text-align: end;
+  padding-top: 9px;
 }
 
 nav {
@@ -49,10 +54,18 @@ nav {
 
 button {
   background-color: white;
-  border-color: black;
+  border: solid 3px #eb7c63;
+
   padding: 0.5rem;
   margin: 0.2rem;
-  font-family: "Cinzel", serif;
+  font-family: "BitterRoman-Regular", serif;
+}
+button p {
+  padding: 0;
+}
+button:hover {
+  background-color: #eb7c63;
+  color: white;
 }
 
 .data-container {
@@ -66,7 +79,7 @@ button {
   height: 26rem;
 }
 
-#popup {
+/* #popup {
   width: 100vw;
   height: 100vh;
   background-color: #00000099;
@@ -79,4 +92,6 @@ button {
 #popup article {
   background-color: white;
   width: 85%;
-}
+} */
+
+/*------------------------ NAV menu med logo -----------------------------------*/

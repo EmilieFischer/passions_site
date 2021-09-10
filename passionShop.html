@@ -6,34 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Passions Website</title>
     <link rel="stylesheet" href="passionShop.css" />
+    <link rel="stylesheet" href="mututal.css" />
   </head>
 
   <body>
     <header>
-        <ul>
-          <li><a href="">Forside</a></li>
-          <li><a href="">Shop</a></li>
-          <li>
-            <a href="forside.html"
-              ><img src="" alt="wall up logo"
-            /></a>
-          </li>
-          <li><a href="">Kontakt</a></li>
-          <li><a href="">"søg"</a></li>
-          <li><a href="">"køb"</a></li>
-        </ul>
-      </nav>    </header>
+      <nav class="hoved_nav">
+        <nav class="lille_nav">
+          <a href="forside.html">Forside</a>
+          <a href="passionShop.html">Shop</a>
+          <a href="designere.html">Designere</a>
+        </nav>
+        <a href="forside.html">
+          <img src="img/wallup_logo.svg" alt="logo" class="logo" />
+        </a>
+        <nav class="lille_nav2">
+          <a href="kontakt.html">Kontakt</a>
+          <a href="kontakt.html">Kontakt</a>
+          <a href="kontakt.html">Kontakt</a>
+        </nav>
+      </nav>
+    </header>
 
     <h2>Alle Plakater</h2>
     <nav>
-      <button data-retter="alle" class="valgt">Alle</button>
-      <button data-retter="forretter">Astro</button>
-      <button data-retter="hovedretter">Dyr</button>
-      <button data-retter="sideorders">Mennesker</button>
-      <button data-retter="desserter">Minimalisme</button>
-      <button data-retter="drikkevarer">Sort/hvid</button>
-      <button data-retter="drikkevarer">Kunst</button>
-      <button data-retter="drikkevarer">Landskab</button>
+      <button data-kategori="alle" class="valgt"><p>Alle</p></button>
+      <button data-kategori="astro"><p>Astro</p></button>
+      <button data-kategori="dyr"><p>Dyr</p></button>
+      <button data-kategori="mennesker"><p>Mennesker</p></button>
+      <button data-kategori="minimalistisk"><p>Minimalisme</p></button>
+      <button data-kategori="sort-hvid"><p>Sort/hvid</p></button>
+      <button data-kategori="kunst"><p>Kunst</p></button>
+      <button data-kategori="landskab"><p>Landskab</p></button>
     </nav>
 
     <section class="data-container"></section>
@@ -41,8 +45,6 @@
       <article id="liste">
         <img src="" alt="" />
         <h3></h3>
-        <p class="billednavn"></p>
-        <p class="kategori"></p>
         <p class="kortbeskrivelse"></p>
         <p class="pris"></p>
       </article>
@@ -55,10 +57,10 @@
       const filterKnapper = document.querySelectorAll("nav button");
       const navOverskrift = document.querySelector("h2");
 
-      const url = "https://babushka-dd8a.restdb.io/rest/menu";
+      const url = "https://tema7-4228.restdb.io/rest/plakater";
       const options = {
         headers: {
-          "x-apikey": "600ec2fb1346a1524ff12de4",
+          "x-apikey": "613a090d43cedb6d1f97eefc",
         },
       };
 
@@ -75,7 +77,7 @@
       }
 
       function filtrerBilleder() {
-        filter = this.dataset.billeder;
+        filter = this.dataset.kategori;
         document.querySelector(".valgt").classList.remove("valgt");
         this.classList.add("valgt");
         console.log(filter);
@@ -96,19 +98,22 @@
         billeder.forEach((ret) => {
           if (filter == ret.kategori || filter == "alle") {
             let klon = temp.cloneNode(true);
-            klon.querySelector("h3").textContent = ret.navn;
+
             klon.querySelector("img").src =
-              "bistro/" + ret.billednavn + "-md.jpg";
-            klon.querySelector(".billednavn").textContent = ret.billednavn;
+              "content_billeder/" + ret.billedenavn + ".jpg";
             klon.querySelector(".kortbeskrivelse").textContent =
               ret.kortbeskrivelse;
             klon.querySelector(".pris").textContent = "Pris: " + ret.pris;
-            klon.querySelector("article").addEventListener("click", () => {
-              location.href = "bistro-single.html?id=" + ret._id;
-            });
+            klon
+              .querySelector("#liste")
+              .addEventListener("click", () => visDetaljer(ret));
+
             container.appendChild(klon);
           }
         });
+      }
+      function visDetaljer(hvem) {
+        location.href = `singel_side_shop.html?id=${hvem._id}`;
       }
     </script>
   </body>
