@@ -20,6 +20,7 @@ h2 {
   display: block;
   max-width: 100%;
   height: auto;
+  filter: brightness(85%);
 }
 
 .splashholder p {
@@ -30,6 +31,7 @@ h2 {
   font-weight: 500;
   font-size: 3rem;
   margin-top: 18rem;
+  z-index: 10;
 }
 
 button {
@@ -42,6 +44,7 @@ button {
   font-family: "Urbanist", sans-serif;
   letter-spacing: 0.3vw;
   font-weight: 100;
+  z-index: 10;
 }
 
 button:hover {
