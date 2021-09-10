@@ -5,56 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="mututal.css" />
+    <link rel="stylesheet" href="singel_side.css" />
   </head>
-  <style>
-    .liste img {
-      display: block;
-      width: 400px;
-      max-width: 100%;
-      object-fit: cover;
-      aspect-ratio: 16/20;
-      border: solid 1px black;
-    }
-    p {
-      text-align: end;
-      padding-top: 9px;
-    }
-    #single_side {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      grid-gap: 5px;
-      place-items: center;
-    }
-    .liste {
-      padding-top: 26px;
-    }
 
-    button {
-      background-color: white;
-      border: solid 3px #eb7c63;
-
-      font-family: "BitterRoman-Regular", serif;
-    }
-    button p {
-      padding: 0;
-    }
-    button:hover {
-      background-color: #eb7c63;
-      color: white;
-    }
-  </style>
   <body id="single_side">
+    <header>
+      <nav class="hoved_nav">
+        <nav class="lille_nav">
+          <a href="forside.html">Forside</a>
+          <a href="passionShop.html">Shop</a>
+          <a href="designere.html">Designere</a>
+        </nav>
+        <a href="forside.html">
+          <img src="img/wallup_logo.svg" alt="logo" class="logo" />
+        </a>
+        <nav class="lille_nav2">
+          <a href="kontakt.html">Kontakt</a>
+          <a href="kontakt.html">Kontakt</a>
+          <a href="kontakt.html">Kontakt</a>
+        </nav>
+      </nav>
+    </header>
+
     <main>
-      <button>Tilbage</button>
+      <button class="knap_tilbage">Tilbage</button>
       <article class="liste">
-        <img src="" alt="" />
+        <img class="pic" src="" alt="" />
         <h3></h3>
-        <p class="kortbeskrivelse"></p>
+        <p class="langbeskrivelse"></p>
         <p class="pris"></p>
+        <p class="ramme">Tilføj Ramme</p>
+        <p class="indkobskurv">Tilføj til indkøbskurv</p>
       </article>
     </main>
   </body>
 </html>
+
 <script>
   const urlParams = new URLSearchParams(window.location.search);
   const id = urlParams.get("id");
@@ -76,10 +63,10 @@
   }
 
   function visListe() {
-    document.querySelector("img").src =
+    document.querySelector(".pic").src =
       "content_billeder/" + billeder.billedenavn + ".jpg";
-    document.querySelector(".kortbeskrivelse").textContent =
-      billeder.kortbeskrivelse;
+    document.querySelector(".langbeskrivelse").textContent =
+      billeder.langbeskrivelse;
     document.querySelector(".pris").textContent = "Pris: " + billeder.pris;
   }
   document.querySelector("button").addEventListener("click", () => {

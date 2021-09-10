@@ -6,6 +6,9 @@
   aspect-ratio: 16/20;
   border: solid 1px black;
 }
+#menuknap:hover {
+  background-color: none;
+}
 
 .box {
   width: 100%;
@@ -63,7 +66,7 @@ button {
 button p {
   padding: 0;
 }
-button:hover {
+.hover_button button:hover {
   background-color: #eb7c63;
   color: white;
 }
