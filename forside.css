@@ -87,12 +87,11 @@ header li {
 }
 
 #rabat_boks {
-  display: grid;
-  place-content: center;
   text-align: center;
-
+height: 13vw;
   background-color: rgb(177, 177, 177);
   color: white;
+  padding-top: 1vw;
 }
 
 .splashholder {
