@@ -5,7 +5,6 @@
 }
 
 main {
-  display: grid;
   place-items: center;
   max-width: 1200px;
   margin-left: 5vw;
@@ -22,6 +21,7 @@ h2 {
   font-family: "Urbanist", sans-serif;
   font-weight: 400;
   font-size: 1.3rem;
+  
 }
 
 h3 {
@@ -86,7 +86,7 @@ header li {
 #menu a {
   text-decoration: none;
   color: rgb(255, 255, 255);
-  font-family: "Aleo";
+  font-family: "Urbanist", sans-serif;
 }
 
 .hidden {
