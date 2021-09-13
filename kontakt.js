@@ -4,6 +4,12 @@ function openForm() {
   document.querySelector("#kontaktform").style.display = "block";
 }
 
+document.querySelector("#send").addEventListener("click", takForm);
+function takForm() {
+  document.querySelector("#tak").style.display = "block";
+  document.querySelector("#form").style.display = "none";
+}
+
 document.querySelector("#luk-knap").addEventListener("click", lukPopup);
 
 function lukPopup() {

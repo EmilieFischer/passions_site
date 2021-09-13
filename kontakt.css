@@ -18,18 +18,18 @@ body {
 }
 
 #right {
-  place-self: center;
   min-height: 100px;
   justify-content: center;
 }
 #right img {
   height: 250px;
-  padding: 100x;
-  margin-right: 500px;
+  justify-content: center;
+  padding-bottom: 20px;
 }
 
-#tekst {
-  padding: 30px;
+#right article {
+  max-width: 600px;
+  padding-bottom: 30px;
 }
 
 h1 {
@@ -94,6 +94,14 @@ button #kontakt-knap {
   margin-top: 50px;
 }
 
+#tak {
+  display: none;
+}
+
+button #luk-knap {
+  width: 10px;
+}
+
 #kontaktform {
   position: fixed;
   display: none;
@@ -123,16 +131,9 @@ textarea {
   height: 80px;
   resize: none;
 }
-
-.send {
-  width: 140px;
-  display: inline-block;
-  background: #eb7c63;
-  color: #fff;
-  font-weight: 100;
-  font-size: 1.2em;
-  border: none;
-  height: 30px;
+#send {
+  border: 3px solid #eb7c63;
+  cursor: pointer;
 }
 
 /*CONTACT FORM DONE*/
@@ -145,5 +146,13 @@ textarea {
 }
 
 #bottom-container {
-  padding: 80px;
+  width: 50%;
+  margin-inline: auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+footer .some-icon img {
+  width: 5%;
+  height: auto;
 }
