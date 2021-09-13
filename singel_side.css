@@ -29,6 +29,8 @@ p {
 }
 .pic {
   margin-bottom: 1rem;
+  border: solid 2px black;
+  object-fit: cover;
 }
 .langbeskrivelse {
   margin-bottom: 1rem;
@@ -59,7 +61,7 @@ p {
 
   main {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-gap: 5px;
     place-items: center;
     margin-top: 0;
@@ -134,4 +136,22 @@ p {
   .hjerte_svg:hover {
     background-color: red;
   }
+}
+@media (min-width: 1000px) {
+  .liste {
+    grid-row: 10;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* grid-template-columns: 2fr 1fr 1fr; */
+    grid-gap: 5px;
+
+}
+@media (min-width: 1356px) {
+  .liste {
+    grid-row: 10;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    /* grid-template-columns: 2fr 1fr 1fr; */
+    grid-gap: 5px;
+
 }
