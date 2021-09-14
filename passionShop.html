@@ -28,6 +28,7 @@
           <li><a href="forside.html">Forside</a></li>
           <li><a href="passionShop.html">Shop</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="designere.html">Designere</a></li>
         </ul>
       </nav>
     </header>
@@ -113,7 +114,7 @@
   let filter = "alle";
 
   function start() {
-    const filterKnapper = document.querySelectorAll("nav button");
+    const filterKnapper = document.querySelectorAll(".hover_button button");
 
     filterKnapper.forEach((knap) =>
       knap.addEventListener("click", filtrerBilleder)
