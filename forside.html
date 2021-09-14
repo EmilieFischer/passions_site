@@ -33,8 +33,8 @@
         <ul id="menu" class="hidden">
           <li><a href="forside.html">Forside</a></li>
           <li><a href="passionShop.html">Shop</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
           <li><a href="designere.html">Designere</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
       </nav>
 
@@ -55,10 +55,18 @@
       <h2>Populære Motiver</h2>
 
       <section id="popular_motiv">
-        <img src="content_billeder/oeje.jpg" alt="billede af øje" />
-        <img src="content_billeder/strand.jpg" alt="billede af strand" />
-        <img src="content_billeder/plante.jpg" alt="billede af plante" />
-        <img src="content_billeder/sten.jpg" alt="billede af sten" />
+        <a href="passionShop.html">
+          <img src="content_billeder/oeje.jpg" alt="billede af øje"
+        /></a>
+        <a href="passionShop.html">
+          <img src="content_billeder/strand.jpg" alt="billede af strand"
+        /></a>
+        <a href="passionShop.html"
+          ><img src="content_billeder/plante.jpg" alt="billede af plante"
+        /></a>
+        <a href="passionShop.html"
+          ><img src="content_billeder/sten.jpg" alt="billede af sten"
+        /></a>
       </section>
 
       <h2>Inspiration til hjemmet</h2>
@@ -140,6 +148,15 @@
           document.querySelector("#menuknap").textContent = "☰";
         } else {
           document.querySelector("#menuknap").textContent = "x";
+        }
+
+        // <!-- ******************** Gør "shop her"-knappen klikbar ********************-->
+        document.querySelector(".shopknap").addEventListener("click", klikKnap);
+
+        function klikKnap() {
+          document.querySelector(
+            ".shopknap"
+          ).location.href = `passionShop.html`;
         }
       }
     </script>
