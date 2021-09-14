@@ -156,6 +156,9 @@ main h2 {
     grid-template-columns: repeat(4, 1fr);
   }
 
+  #popular_motiv img:hover {
+    box-shadow: 10px 10px 10px #888888;
+  }
   #popular_motiv img {
     border: solid black 3px;
   }
