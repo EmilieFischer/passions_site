@@ -58,7 +58,12 @@ p {
 
 nav {
   text-align: center;
+}
+.hover_button {
   margin: 2.5rem;
+}
+.hoved_nav {
+  margin: 0;
 }
 
 button {
