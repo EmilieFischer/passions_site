@@ -1,6 +1,3 @@
-body {
-}
-
 #container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -33,7 +30,7 @@ body {
 }
 
 h1 {
-  font-family: "Urbanist", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 1.8rem;
 }
@@ -59,16 +56,15 @@ p {
 }
 
 /*CONTACT FORM START*/
-@import "https://fonts.googleapis.com/css?family=Raleway";
 * {
   box-sizing: border-box;
 }
 #left {
   margin: 0;
   padding: 0;
-  font-family: "Bitter", serif;
-  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
 }
+
 h1 {
   margin: 0;
 }
@@ -80,6 +76,7 @@ button {
   text-align: center;
   cursor: pointer;
   border: 3px solid #eb7c63;
+  background-color: white;
 }
 
 #left button:hover {
