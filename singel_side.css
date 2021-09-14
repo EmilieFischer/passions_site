@@ -1,3 +1,5 @@
+/* -------------- */
+
 button {
   background-color: white;
   border: solid 3px #eb7c63;
@@ -45,7 +47,7 @@ p {
 /* -------------- */
 @media (min-width: 800px) {
   img {
-    display: block;
+    /* display: block; */
     width: 400px;
     max-width: 100%;
     aspect-ratio: 16/20;

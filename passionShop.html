@@ -13,13 +13,16 @@
     <header>
       <nav class="hoved_nav">
         <nav class="lille_nav">
-          <a href="kontakt.html">Kontakt</a>
-          <a href="kontakt.html">Kontakt</a>
+          <a href="kontakt.html"><img src="img/soeg.svg" alt="søgefelt" /></a>
+          <a href="kontakt.html"
+            ><img src="img/indkøbskurv.svg" alt="indkøbskurv"
+          /></a>
         </nav>
 
         <a href="forside.html">
           <img src="img/wallup_logo.svg" alt="logo" class="logo" />
         </a>
+
         <button id="menuknap">☰</button>
         <ul id="menu" class="hidden">
           <li><a href="forside.html">Forside</a></li>
@@ -51,87 +54,136 @@
       </article>
     </template>
 
-    <script>
-      let billeder;
-      let container = document.querySelector("section");
-      let temp = document.querySelector("template").content;
-      const filterKnapper = document.querySelectorAll("nav button");
-      const navOverskrift = document.querySelector("h2");
+    <footer>
+      <ul id="footer_list">
+        <h3>Wall Up</h3>
+        <li>KEA Guldbergsgade</li>
+        <li>+45 28 51 31 71</li>
+        <li>CVR: 123456789</li>
+      </ul>
+      <section id="logo_footer">
+        <a href="forside.html">
+          <img src="img/logo_vandmaerke.svg" alt="logo" class="logo" />
+        </a>
+      </section>
 
-      const url = "https://tema7-4228.restdb.io/rest/plakater";
-      const options = {
-        headers: {
-          "x-apikey": "613a090d43cedb6d1f97eefc",
-        },
-      };
+      <ul id="find_os_liste">
+        <h3>Mød os her:</h3>
+        <p>og find inspiration til din næste billedevæg</p>
+        <li>
+          <a href="forside.html">
+            <img src="img/instagram.svg" alt="logo" class="logo" />
+            <img src="img/instagram.svg" alt="logo" class="logo" />
+            <img src="img/instagram.svg" alt="logo" class="logo" />
+          </a>
+        </li>
+      </ul>
+      <section id="socialemedier_img">
+        <h3>Populære Motiver:</h3>
+        <img src="content_billeder/skov.jpg" alt="billede af skov" />
+        <img src="content_billeder/sten.jpg" alt="billede af sten" />
+        <img
+          src="content_billeder/solnedgang.jpg"
+          alt="billede af solnedgang"
+        />
 
-      document.addEventListener("DOMContentLoaded", start);
-      let filter = "alle";
-
-      function start() {
-        const filterKnapper = document.querySelectorAll("nav button");
-
-        filterKnapper.forEach((knap) =>
-          knap.addEventListener("click", filtrerBilleder)
-        );
-        hentdata();
-      }
-
-      function filtrerBilleder() {
-        filter = this.dataset.kategori;
-        document.querySelector(".valgt").classList.remove("valgt");
-        this.classList.add("valgt");
-        console.log(filter);
-        navOverskrift.textContent = this.textContent;
-        visListe();
-      }
-
-      async function hentdata() {
-        const JSONData = await fetch(url, options);
-        billeder = await JSONData.json();
-        console.log(billeder);
-        visListe();
-      }
-
-      function visListe() {
-        container.textContent = "";
-
-        billeder.forEach((ret) => {
-          if (filter == ret.kategori || filter == "alle") {
-            let klon = temp.cloneNode(true);
-
-            klon.querySelector("img").src =
-              "content_billeder/" + ret.billedenavn + ".jpg";
-            klon.querySelector(".kortbeskrivelse").textContent =
-              ret.kortbeskrivelse;
-            klon.querySelector(".pris").textContent = "Pris: " + ret.pris;
-            klon
-              .querySelector("#liste")
-              .addEventListener("click", () => visDetaljer(ret));
-
-            container.appendChild(klon);
-          }
-        });
-      }
-      function visDetaljer(hvem) {
-        location.href = `singel_side_shop.html?id=${hvem._id}`;
-      }
-
-      window.addEventListener("load", sidenVises);
-
-      function sidenVises() {
-        console.log("sidenVises");
-
-        document
-          .querySelector("#menuknap")
-          .addEventListener("click", toggleMenu);
-      }
-
-      function toggleMenu() {
-        console.log("toggleMenu");
-
-        document.querySelector("#menu").classList.toggle("hidden");
-      }
-    </script>
+        <br />
+        <img src="content_billeder/haand.jpg" alt="billede af hånd" />
+        <img src="content_billeder/strand.jpg" alt="billede af strand" />
+        <img src="content_billeder/brandmand.jpg" alt="billede af brandmand" />
+      </section>
+    </footer>
   </body>
 </html>
+<script>
+  let billeder;
+  let container = document.querySelector("section");
+  let temp = document.querySelector("template").content;
+  const filterKnapper = document.querySelectorAll("nav button");
+  const navOverskrift = document.querySelector("h2");
+
+  const url = "https://tema7-4228.restdb.io/rest/plakater";
+  const options = {
+    headers: {
+      "x-apikey": "613a090d43cedb6d1f97eefc",
+    },
+  };
+
+  document.addEventListener("DOMContentLoaded", start);
+  let filter = "alle";
+
+  function start() {
+    const filterKnapper = document.querySelectorAll("nav button");
+
+    filterKnapper.forEach((knap) =>
+      knap.addEventListener("click", filtrerBilleder)
+    );
+    hentdata();
+  }
+
+  function filtrerBilleder() {
+    filter = this.dataset.kategori;
+    document.querySelector(".valgt").classList.remove("valgt");
+    this.classList.add("valgt");
+    console.log(filter);
+    navOverskrift.textContent = this.textContent;
+    visListe();
+  }
+
+  async function hentdata() {
+    const JSONData = await fetch(url, options);
+    billeder = await JSONData.json();
+    console.log(billeder);
+    visListe();
+  }
+
+  function visListe() {
+    container.textContent = "";
+
+    billeder.forEach((ret) => {
+      if (filter == ret.kategori || filter == "alle") {
+        let klon = temp.cloneNode(true);
+
+        klon.querySelector("img").src =
+          "content_billeder/" + ret.billedenavn + ".jpg";
+        klon.querySelector(".kortbeskrivelse").textContent =
+          ret.kortbeskrivelse;
+        klon.querySelector(".pris").textContent = "Pris: " + ret.pris;
+        klon
+          .querySelector("#liste")
+          .addEventListener("click", () => visDetaljer(ret));
+
+        container.appendChild(klon);
+      }
+    });
+  }
+  function visDetaljer(hvem) {
+    location.href = `singel_side_shop.html?id=${hvem._id}`;
+  }
+
+  // ------------
+  // lytter efter når siden er loaded
+  window.addEventListener("load", sidenVises);
+
+  // når siden er loaded viser den menuknappen og gør den klikbar
+  function sidenVises() {
+    console.log("sidenVises");
+    document.querySelector("#menuknap").addEventListener("click", toggleMenu);
+  }
+  // når man klikker på menuknap lytter den efter funktionen toggle
+  function toggleMenu() {
+    console.log("toggleMenu");
+
+    // toggle = når toggle er aktiv og der trykkes på menuknappen bliver .hidden aktiveret på #menu og den "forsvinder",
+    // og hvis .hidden er på #menu når der trykkes på menuknappen bliver den vist igen da .hidden fjernes
+    document.querySelector("#menu").classList.toggle("hidden");
+    let erSkjult = document.querySelector("#menu").classList.contains("hidden");
+
+    // hvis det er sandt at .hidden er aktiv vises "☰" og hvis .hidden ikke er aktiv og menuen bliver set vises "x".
+    if (erSkjult == true) {
+      document.querySelector("#menuknap").textContent = "☰";
+    } else {
+      document.querySelector("#menuknap").textContent = "x";
+    }
+  }
+</script>
