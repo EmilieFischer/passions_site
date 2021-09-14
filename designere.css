@@ -1,0 +1,65 @@
+/*billede grid start*/
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  vertical-align: middle;
+  width: 100%;
+}
+/* billede grid done*/
+
+/* hover på billeder start */
+.container {
+  position: relative;
+  width: 100%;
+  margin: 8px;
+}
+.container:hover .overlay {
+  opacity: 0.5;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: black;
+}
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+/* hover på billeder done*/
+
+h1 {
+  color: #363535;
+  font-family: "Urbanist", sans-serif;
+  font-size: 5rem;
+  line-height: 130%;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 10px;
+}
