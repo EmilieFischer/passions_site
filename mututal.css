@@ -106,12 +106,10 @@ header li {
 /* *******************styling af footer******************* */
 
 footer {
+  display: grid;
+  place-items: center;
   height: 17rem;
   background-color: rgb(184, 184, 184);
-  display: grid;
-  place-items: start;
-  grid-template-columns: 10fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
 }
 
 footer li {
@@ -128,12 +126,10 @@ footer li {
 
 #logo_footer {
   grid-column: 1;
-  margin-left: 10.8rem;
 }
 
 #logo_footer img {
   height: 5rem;
-  margin-left: 5vw;
 }
 
 #socialemedier_img {
@@ -161,6 +157,13 @@ footer li {
   margin-top: 2vw;
 }
 
+.footer_wrapper {
+  display: flex;
+  height: 11rem;
+  place-items: start center;
+  gap: 28vw;
+}
+
 /* **************************************MEDIA QUERY************************************** */
 
 @media screen and (min-width: 680px) {
@@ -171,6 +174,10 @@ footer li {
   }
 
   /* *******************styling af menu******************* */
+
+  footer {
+    height: 25rem;
+  }
 
   #menuknap {
     display: none;
@@ -183,7 +190,6 @@ footer li {
 
   #menu {
     display: inline-block;
-    padding-left: 2rem;
     background-color: white;
     display: flex;
     width: auto;
@@ -224,32 +230,23 @@ footer li {
 
   /* *******************styling af footer******************* */
 
-  footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    height: 24rem;
-  }
-
   #logo_footer {
-    grid-column: 2;
-    margin-left: 10vw;
+    margin-left: 0;
   }
 
   #logo_footer img {
     height: 7vw;
-    margin-left: 5vw;
+    margin-left: 0;
   }
   #footer_list {
     grid-row: 2/3;
     line-height: 2rem;
-    margin-left: 12vw;
+    margin-left: 0;
   }
 
   #find_os_liste {
     grid-column: 2/3;
     margin: 0;
-    margin-left: 8vw;
   }
 
   #find_os_liste li a img {
@@ -271,7 +268,6 @@ footer li {
   #socialemedier_img {
     display: block;
     grid-row: 2;
-    margin-left: 9vw;
     margin-bottom: 5vw;
   }
 
@@ -282,5 +278,11 @@ footer li {
   }
   #socialemedier_img h3 {
     margin-bottom: 1vw;
+  }
+
+  .footer_wrapper {
+    gap: 21vw;
+    grid-row: 2;
+    height: 16rem;
   }
 }
