@@ -55,6 +55,10 @@ p {
   font-size: 0.8rem;
 }
 
+article p {
+  line-height: 19px;
+}
+
 /*CONTACT FORM START*/
 * {
   box-sizing: border-box;
@@ -67,6 +71,7 @@ p {
 
 h1 {
   margin: 0;
+  margin-bottom: 1vw;
 }
 
 button {
