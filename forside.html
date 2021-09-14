@@ -149,15 +149,15 @@
         } else {
           document.querySelector("#menuknap").textContent = "x";
         }
+      }
 
-        // <!-- ******************** Gør "shop her"-knappen klikbar ********************-->
-        document.querySelector(".shopknap").addEventListener("click", klikKnap);
+      // <!-- ******************** Gør "shop her"-knappen klikbar ********************-->
+      document.querySelector(".shopknap").addEventListener("click", klikKnap);
 
-        function klikKnap() {
-          document.querySelector(
-            ".shopknap"
-          ).location.href = `passionShop.html`;
-        }
+      function klikKnap() {
+        console.log("hej");
+        location.href =
+          "http://emiliefischer.com/kea/2sem/07_dynamiskWeb/passion/passions_site/passionShop.html";
       }
     </script>
   </body>
