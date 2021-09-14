@@ -9,7 +9,9 @@
 #menuknap:hover {
   background-color: none;
 }
-
+a img:hover {
+  box-shadow: none;
+}
 .box {
   width: 100%;
   height: 40px;
