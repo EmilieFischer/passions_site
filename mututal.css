@@ -112,7 +112,7 @@ header li {
 footer {
   display: grid;
   place-items: center;
-  height: 17rem;
+  height: 18.5rem;
   background-color: rgb(184, 184, 184);
 }
 
