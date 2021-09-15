@@ -1,5 +1,9 @@
 /* -------------- */
-
+#logo_footer {
+  grid-column: 2;
+  /* place-self: normal;
+  padding-left: 32px; */
+}
 button {
   background-color: white;
   border: solid 3px #eb7c63;
@@ -129,14 +133,18 @@ p {
     width: 5.5vw;
     height: 5vw;
     border: none;
-    place-self: center;
+    place-self: center end;
 
     grid-column: 2/3;
     grid-row: 4/4;
   }
 
   .hjerte_svg:hover {
-    background-color: red;
+    background-image: url(img/red_heart.svg);
+    width: 6vw;
+    height: 6vw;
+
+    place-self: center end;
   }
 }
 @media (min-width: 1000px) {
