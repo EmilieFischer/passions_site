@@ -18,6 +18,8 @@
 
   <body>
     <header>
+      <!-- her tilføjes de to ikoner, der fører til indkøbskurv og søgefelt -->
+      <!-- hoved_nav tilføjes og omslutter hele navigationsmenuen -->
       <nav class="hoved_nav">
         <nav class="lille_nav">
           <a href="kontakt.html"><img src="img/soeg.svg" alt="søgefelt" /></a>
@@ -26,10 +28,12 @@
           /></a>
         </nav>
 
+        <!-- logo tilføjes -->
         <a href="index.html">
           <img src="img/wallup_logo.svg" alt="logo" class="logo" />
         </a>
 
+        <!-- menuen gøres klar til at blive burgermenu (sker længere nede i javascipten)-->
         <button id="menuknap">☰</button>
         <ul id="menu" class="hidden">
           <li><a href="index.html">Forside</a></li>
@@ -39,22 +43,29 @@
         </ul>
       </nav>
 
+      <!-- der tilføjes en lille boks, hvor der er informationer om rabatter -->
       <article id="rabat_boks">
         <h3>35% RABAT PÅ ALLE PLAKATER</h3>
         <p class="lille_p">Gælder ikke nyeste varer, slutter 1/10</p>
       </article>
+
+      <!-- splashholder indeholder hele splashbilledet, shop-knappen og <p> da det skal ligge ovenpå splashbilledet -->
       <div class="splashholder">
         <img src="img/plakater_2.jpg" alt="splashbillede" />
         <p>
           PLAKATER TIL DIN PERFEKTE <br />
           BILLEDEVÆG
         </p>
+        <!-- shopknap aktiveres nede i javascript -->
         <button class="shopknap">SHOP HER</button>
       </div>
     </header>
+
+    <!-- ****************** main/content starter ****************** -->
     <main>
       <h2>Populære Motiver</h2>
 
+      <!-- første section der indeholder 4 populære motiver -->
       <section id="popular_motiv">
         <a href="passionShop.html">
           <img src="content_billeder/oeje.jpg" alt="billede af øje"
@@ -70,18 +81,24 @@
         /></a>
       </section>
 
+      <!-- Næste section har 2 billeder i sig, der skal fungere som inspiration til brugeren -->
       <h2>Inspiration til hjemmet</h2>
       <section id="insp_motiv">
         <img src="img/insp5.jpg" alt="billede af stue 1" />
         <img src="img/insp6.jpg" alt="billede af stue 2" />
       </section>
     </main>
+
+    <!-- ****************** footer starter ****************** -->
+
     <footer>
+      <!-- logo (vandmærke) tilføjes til footer -->
       <section id="logo_footer">
         <a href="index.html">
           <img src="img/logo_vandmaerke.svg" alt="logo" class="logo" />
         </a>
       </section>
+      <!-- div og id tilføjes der indeholder kontaktinformationer -->
       <div class="footer_wrapper">
         <ul id="footer_list">
           <h3>Wall Up</h3>
@@ -94,17 +111,28 @@
           <li>CVR: 123456789</li>
         </ul>
 
+        <!-- ul tilføjes der indeholder sociale medier ikoner -->
         <ul id="find_os_liste">
           <h3>Mød os her:</h3>
           <p>og find inspiration til din næste billedevæg</p>
           <li>
             <a href="index.html">
-              <img src="img/instagram_icon.svg" alt="logo" class="logo" />
-              <img src="img/facebook_icon.svg" alt="logo" class="logo" />
-              <img src="img/twitter_icon.svg" alt="logo" class="logo" />
+              <img
+                src="img/instagram_icon.svg"
+                alt="instagram ikon"
+                class="logo"
+              />
+              <img
+                src="img/facebook_icon.svg"
+                alt="facebook ikon"
+                class="logo"
+              />
+              <img src="img/twitter_icon.svg" alt="twitter ikon" class="logo" />
             </a>
           </li>
         </ul>
+        <!-- section tilføjes der indeholder 6 populære billeder -->
+
         <section id="socialemedier_img">
           <h3>Populære Motiver:</h3>
           <img src="content_billeder/skov.jpg" alt="billede af skov" />
@@ -159,6 +187,7 @@
       // <!-- ******************** Gør "shop her"-knappen klikbar ********************-->
       document.querySelector(".shopknap").addEventListener("click", klikKnap);
 
+      // når man klikker på .shopknap bliver man sendt til domænet
       function klikKnap() {
         console.log("hej");
         location.href =

@@ -1,3 +1,4 @@
+/* **************** GENERELT **************** */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -37,6 +38,8 @@ p {
   font-family: "Montserrat", sans-serif;
 }
 
+/* **************** HEADER **************** */
+
 /* styling og placering af logo */
 .logo {
   height: 8rem;
@@ -46,7 +49,6 @@ p {
 }
 
 /* styling og placering af nav */
-
 .hoved_nav {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -76,6 +78,7 @@ header li {
   list-style: none;
 }
 
+/* styler på burgermenuen */
 #menu {
   grid-column: 1/4;
   text-align: center;
@@ -176,18 +179,19 @@ footer li {
 /* **************************************MEDIA QUERY************************************** */
 
 @media screen and (min-width: 680px) {
-  .lille_nav img {
-    width: 2vw;
-    height: auto;
-    margin: 3vw;
-  }
-
   /* *******************styling af menu******************* */
 
   footer {
     height: 25rem;
   }
 
+  .lille_nav img {
+    width: 2vw;
+    height: auto;
+    margin: 3vw;
+  }
+
+  /* gør burgermenu til alm. menu */
   #menuknap {
     display: none;
   }
@@ -234,10 +238,6 @@ footer li {
     padding: 2vw;
   }
 
-  #footer_list a:hover {
-    color: #e4654f;
-  }
-
   /* *******************styling af footer******************* */
 
   #logo_footer {
@@ -248,10 +248,21 @@ footer li {
     height: 7vw;
     margin-left: 0;
   }
+
   #footer_list {
     grid-row: 2/3;
     line-height: 2rem;
     margin-left: 0;
+  }
+
+  #footer_list a:hover {
+    color: #e4654f;
+  }
+
+  .footer_wrapper {
+    gap: 21vw;
+    grid-row: 2;
+    height: 16rem;
   }
 
   #find_os_liste {
@@ -288,11 +299,5 @@ footer li {
   }
   #socialemedier_img h3 {
     margin-bottom: 1vw;
-  }
-
-  .footer_wrapper {
-    gap: 21vw;
-    grid-row: 2;
-    height: 16rem;
   }
 }

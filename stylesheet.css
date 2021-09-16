@@ -1,3 +1,5 @@
+/* styling og placering af splashbilledet og dets indhold i header */
+
 #rabat_boks {
   text-align: center;
   height: 10vw;
@@ -92,7 +94,7 @@ main h2 {
     text-align: center;
   }
 
-  /* *******************styling af splashbilledet, <p> og <button> som ligger ovenpå splashbilledet******************* */
+  /* ******************* styling af splashbilledet, <p> og <button> som ligger ovenpå splashbilledet ******************* */
   .splashholder {
     display: grid;
     max-height: 70vh;
@@ -126,7 +128,7 @@ main h2 {
     grid-area: 1/1;
   }
 
-  /* *******************styler rabat-række før splashbilledet******************* */
+  /* ******************* styler rabat-række før splashbilledet ******************* */
   #rabat_boks {
     background-color: rgb(184, 184, 184);
     height: 4rem;
@@ -150,7 +152,7 @@ main h2 {
     margin-top: 2rem;
   }
 
-  /* *******************styler section med populære motiver********************/
+  /* ******************* styler section med populære motiver ********************/
   #popular_motiv {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -163,7 +165,7 @@ main h2 {
     border: solid black 3px;
   }
 
-  /* *******************styler section med inspirations-motiver********************/
+  /* ******************* styler section med inspirations-motiver ********************/
   #insp_motiv {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
