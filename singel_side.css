@@ -16,6 +16,13 @@ button:hover {
   background-color: #eb7c63;
   color: white;
 }
+
+.ramme {
+  background-color: white;
+  border: solid 3px #eb7c63;
+  padding: 14px;
+  text-align: center;
+}
 .indkobskurv {
   background-color: white;
   border: solid 3px #eb7c63;
@@ -35,15 +42,23 @@ p {
   object-fit: cover;
 }
 .langbeskrivelse {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .pris {
   font-weight: bolder;
-  margin-bottom: 00.5rem;
+  margin-bottom: 2rem;
 }
 .liste {
   margin-bottom: 20px;
+  display: grid;
+}
+
+.hjerte_svg {
+  width: 9vw;
+  height: auto;
+  margin-top: 4vw;
+  place-self: center;
 }
 /* -------------- */
 @media (min-width: 800px) {
@@ -130,19 +145,18 @@ p {
     width: 5vw;
     height: 5vw;
     border: none;
-    place-self: start;
+    place-self: start end;
+    margin-top: 0;
 
-    grid-column: 3/3;
+    grid-column: 2/3;
     grid-row: 4/4;
-    z-index: 1;
   }
 
   .hjerte_svg:hover {
     background-image: url(img/heart_red.png);
     width: 5vw;
     height: 5vw;
-    place-self: start;
-    z-index: 10;
+    place-self: start end;
   }
 }
 @media (min-width: 1000px) {
