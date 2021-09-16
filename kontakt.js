@@ -1,33 +1,23 @@
+//Her laves kontakt formularen
+
+//Når man klikker på kontakt-knap åbner kontaktform (formularen) i et popup på siden
 document.querySelector("#kontakt-knap").addEventListener("click", openForm);
 function openForm() {
   console.log(this);
   document.querySelector("#kontaktform").style.display = "block";
 }
 
+//Når man klikker på send skjuler form (formularen) sig og tak-teksten kommer frem
 document.querySelector("#send").addEventListener("click", takForm);
 function takForm() {
   document.querySelector("#tak").style.display = "block";
   document.querySelector("#form").style.display = "none";
 }
 
+//Ved klik på luk-knap skjuler kontaktform sig fra siden
 document.querySelector("#luk-knap").addEventListener("click", lukPopup);
-
 function lukPopup() {
   document.querySelector("#kontaktform").style.display = "none";
-}
-
-window.addEventListener("load", sidenVises);
-
-function sidenVises() {
-  console.log("sidenVises");
-
-  document.querySelector("#menuknap").addEventListener("click", toggleMenu);
-}
-
-function toggleMenu() {
-  console.log("toggleMenu");
-
-  document.querySelector("#menu").classList.toggle("hidden");
 }
 
 //Her laves burgermenuen
