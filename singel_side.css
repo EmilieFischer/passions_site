@@ -1,8 +1,27 @@
-/* -------------- */
+body {
+  max-width: 1920px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
 #logo_footer {
   grid-column: 2;
-  /* place-self: normal;
-  padding-left: 32px; */
+}
+.ramme {
+  background-color: white;
+  border: solid 3px #eb7c63;
+
+  place-self: baseline;
+  font-family: "Montserrat", sans-serif;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  display: -webkit-inline-box;
+}
+.ramme:hover {
+  background-color: #eb7c63;
+  color: white;
 }
 button {
   background-color: white;
@@ -41,12 +60,13 @@ p {
 .langbeskrivelse {
   margin-bottom: 1rem;
 }
-.ramme {
-  margin-bottom: 1rem;
-}
+
 .pris {
   font-weight: bolder;
   margin-bottom: 00.5rem;
+}
+.liste {
+  margin-bottom: 20px;
 }
 /* -------------- */
 @media (min-width: 800px) {
@@ -95,7 +115,7 @@ p {
   .liste {
     grid-row: 10;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     /* grid-template-columns: 2fr 1fr 1fr; */
     grid-gap: 5px;
   }

@@ -60,7 +60,7 @@
         <h3></h3>
         <p class="langbeskrivelse"></p>
         <p class="pris" +></p>
-        <p class="ramme">Tilføj Ramme</p>
+        <p class="ramme">Tilføj størrelse</p>
         <p class="indkobskurv">Tilføj til indkøbskurv</p>
 
         <img class="hjerte_svg" src="" alt="" />
@@ -117,21 +117,24 @@
   const id = urlParams.get("id");
   let billeder;
 
+  // Her har jeg url fra vores restdb og dens apikey der gør jeg kan få adgang til det aray der blevet lavet med posters
   const url = "https://tema7-4228.restdb.io/rest/plakater/";
   const options = {
     headers: {
       "x-apikey": "613a090d43cedb6d1f97eefc",
     },
   };
+
+  // Her hentes min json data ind og sendes videre til function visListe
   document.addEventListener("DOMContentLoaded", hentdata);
   async function hentdata() {
     const resultat = await fetch(url + id, options);
     billeder = await resultat.json();
     visListe();
-
-    // console.log(json);
   }
 
+  // Functionen visListe, sætter de dater der høre med til det enkle poster ind på min side. og fordi der her er en html siden hvor det kun er det enkle poster som skal vises, har
+  // jeg ikke en templet med da det som sagt kun er en poster der skal vises.
   function visListe() {
     document.querySelector(".pic").src =
       "content_billeder/" + billeder.billedenavn + ".jpg";
@@ -140,6 +143,8 @@
     document.querySelector(".pris").textContent =
       "Pris: " + billeder.pris + ",-";
   }
+
+  // her har jeg tilføjet en EventListener til min tilbaeg knap, med "click" og ved hjælp af "window.history.back() kommer man tilbage den side man sidste var på ergo shop siden."
   document.querySelector(".knap_tilbage").addEventListener("click", () => {
     window.history.back();
   });
