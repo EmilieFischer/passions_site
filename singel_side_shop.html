@@ -26,6 +26,7 @@
       href="https://fonts.googleapis.com/css?family=Poppins:600"
       rel="stylesheet"
     />
+    <link rel="icon" type="image/jpg" sizes="32x32" href="img/ikon_2.jpg" />
   </head>
 
   <body id="single_side">
@@ -38,13 +39,13 @@
           /></a>
         </nav>
 
-        <a href="forside.html">
+        <a href="index.html">
           <img src="img/wallup_logo.svg" alt="logo" class="logo" />
         </a>
 
         <button id="menuknap">☰</button>
         <ul id="menu" class="hidden">
-          <li><a href="forside.html">Forside</a></li>
+          <li><a href="index.html">Forside</a></li>
           <li><a href="passionShop.html">Shop</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
           <li><a href="designere.html">Designere</a></li>
@@ -58,7 +59,7 @@
         <img class="pic" src="" alt="" />
         <h3></h3>
         <p class="langbeskrivelse"></p>
-        <p class="pris"></p>
+        <p class="pris" +></p>
         <p class="ramme">Tilføj Ramme</p>
         <p class="indkobskurv">Tilføj til indkøbskurv</p>
 
@@ -68,12 +69,16 @@
     <footer>
       <ul id="footer_list">
         <h3>Wall Up</h3>
-        <li>KEA Guldbergsgade</li>
-        <li>+45 28 51 31 71</li>
+        <div class="telefon">
+          <p><a href="tel:ukendt">Tlf: +44 28 51 31 71</a></p>
+        </div>
+        <div class="email">
+          <p><a href="mail:wallup@gmail.com">email: wallup@gmail.com</a></p>
+        </div>
         <li>CVR: 123456789</li>
       </ul>
       <section id="logo_footer">
-        <a href="forside.html">
+        <a href="index.html">
           <img src="img/logo_vandmaerke.svg" alt="logo" class="logo" />
         </a>
       </section>
@@ -82,10 +87,10 @@
         <h3>Mød os her:</h3>
         <p>og find inspiration til din næste billedevæg</p>
         <li>
-          <a href="forside.html">
-            <img src="img/instagram.svg" alt="logo" class="logo" />
-            <img src="img/instagram.svg" alt="logo" class="logo" />
-            <img src="img/instagram.svg" alt="logo" class="logo" />
+          <a href="index.html">
+            <img src="img/instagram_icon.svg" alt="logo" class="logo" />
+            <img src="img/facebook_icon.svg" alt="logo" class="logo" />
+            <img src="img/twitter_icon.svg" alt="logo" class="logo" />
           </a>
         </li>
       </ul>
@@ -132,7 +137,8 @@
       "content_billeder/" + billeder.billedenavn + ".jpg";
     document.querySelector(".langbeskrivelse").textContent =
       billeder.langbeskrivelse;
-    document.querySelector(".pris").textContent = "Pris: " + billeder.pris;
+    document.querySelector(".pris").textContent =
+      "Pris: " + billeder.pris + ",-";
   }
   document.querySelector(".knap_tilbage").addEventListener("click", () => {
     window.history.back();

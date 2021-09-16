@@ -52,13 +52,13 @@ h3 {
 
 p {
   font-family: "Montserrat", sans-serif;
-  font-size: 0.8rem;
 }
 
 article p {
   line-height: 19px;
   padding-left: 20px;
   padding-right: 20px;
+  font-size: 0.8rem;
 }
 
 /**** Styling af tekst done ****/

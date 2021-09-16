@@ -37,10 +37,6 @@ img {
   margin-top: 20px;
 }
 
-footer {
-  margin-top: 20px;
-}
-
 @media (min-width: 700px) {
   /* Billed grid starter */
   /* Opretter fire lige store kolonner, der sidder ved siden af ​​hinanden */
@@ -54,6 +50,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     padding: 0 4px;
+    margin-bottom: 4vw;
   }
 
   .column img {
