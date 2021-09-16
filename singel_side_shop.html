@@ -57,57 +57,62 @@
       <button class="knap_tilbage">Tilbage</button>
       <article class="liste">
         <img class="pic" src="" alt="" />
-        <h3></h3>
-        <p class="langbeskrivelse"></p>
-        <p class="pris" +></p>
-        <p class="ramme">Tilføj Ramme</p>
-        <p class="indkobskurv">Tilføj til indkøbskurv</p>
 
-        <img class="hjerte_svg" src="" alt="" />
+        <p class="langbeskrivelse"></p>
+        <p class="størrelse"></p>
+
+        <p class="pris" +></p>
+        <button class="ramme">Tilføj størrelse</button>
+        <p class="indkobskurv">Tilføj til indkøbskurv</p>
+        <img class="hjerte_svg" src="img/heart.png" alt="" />
       </article>
     </main>
     <footer>
-      <ul id="footer_list">
-        <h3>Wall Up</h3>
-        <div class="telefon">
-          <p><a href="tel:ukendt">Tlf: +44 28 51 31 71</a></p>
-        </div>
-        <div class="email">
-          <p><a href="mail:wallup@gmail.com">email: wallup@gmail.com</a></p>
-        </div>
-        <li>CVR: 123456789</li>
-      </ul>
       <section id="logo_footer">
         <a href="index.html">
           <img src="img/logo_vandmaerke.svg" alt="logo" class="logo" />
         </a>
       </section>
+      <div class="footer_wrapper">
+        <ul id="footer_list">
+          <h3>Wall Up</h3>
+          <div class="telefon">
+            <p><a href="tel:ukendt">Tlf: +44 28 51 31 71</a></p>
+          </div>
+          <div class="email">
+            <p><a href="mail:wallup@gmail.com">email: wallup@gmail.com</a></p>
+          </div>
+          <li>CVR: 123456789</li>
+        </ul>
+        <ul id="find_os_liste">
+          <h3>Mød os her:</h3>
+          <p>og find inspiration til din næste billedevæg</p>
+          <li>
+            <a href="index.html">
+              <img src="img/instagram_icon.svg" alt="logo" class="logo" />
+              <img src="img/facebook_icon.svg" alt="logo" class="logo" />
+              <img src="img/twitter_icon.svg" alt="logo" class="logo" />
+            </a>
+          </li>
+        </ul>
+        <section id="socialemedier_img">
+          <h3>Populære Motiver:</h3>
+          <img src="content_billeder/skov.jpg" alt="billede af skov" />
+          <img src="content_billeder/sten.jpg" alt="billede af sten" />
+          <img
+            src="content_billeder/solnedgang.jpg"
+            alt="billede af solnedgang"
+          />
 
-      <ul id="find_os_liste">
-        <h3>Mød os her:</h3>
-        <p>og find inspiration til din næste billedevæg</p>
-        <li>
-          <a href="index.html">
-            <img src="img/instagram_icon.svg" alt="logo" class="logo" />
-            <img src="img/facebook_icon.svg" alt="logo" class="logo" />
-            <img src="img/twitter_icon.svg" alt="logo" class="logo" />
-          </a>
-        </li>
-      </ul>
-      <section id="socialemedier_img">
-        <h3>Populære Motiver:</h3>
-        <img src="content_billeder/skov.jpg" alt="billede af skov" />
-        <img src="content_billeder/sten.jpg" alt="billede af sten" />
-        <img
-          src="content_billeder/solnedgang.jpg"
-          alt="billede af solnedgang"
-        />
-
-        <br />
-        <img src="content_billeder/haand.jpg" alt="billede af hånd" />
-        <img src="content_billeder/strand.jpg" alt="billede af strand" />
-        <img src="content_billeder/brandmand.jpg" alt="billede af brandmand" />
-      </section>
+          <br />
+          <img src="content_billeder/haand.jpg" alt="billede af hånd" />
+          <img src="content_billeder/strand.jpg" alt="billede af strand" />
+          <img
+            src="content_billeder/brandmand.jpg"
+            alt="billede af brandmand"
+          />
+        </section>
+      </div>
     </footer>
   </body>
 </html>
@@ -117,21 +122,24 @@
   const id = urlParams.get("id");
   let billeder;
 
+  // Her har jeg url fra vores restdb og dens apikey der gør jeg kan få adgang til det aray der blevet lavet med posters
   const url = "https://tema7-4228.restdb.io/rest/plakater/";
   const options = {
     headers: {
       "x-apikey": "613a090d43cedb6d1f97eefc",
     },
   };
+
+  // Her hentes min json data ind og sendes videre til function visListe
   document.addEventListener("DOMContentLoaded", hentdata);
   async function hentdata() {
     const resultat = await fetch(url + id, options);
     billeder = await resultat.json();
     visListe();
-
-    // console.log(json);
   }
 
+  // Functionen visListe, sætter de dater der høre med til det enkle poster ind på min side. og fordi der her er en html siden hvor det kun er det enkle poster som skal vises, har
+  // jeg ikke en templet med da det som sagt kun er en poster der skal vises.
   function visListe() {
     document.querySelector(".pic").src =
       "content_billeder/" + billeder.billedenavn + ".jpg";
@@ -139,7 +147,11 @@
       billeder.langbeskrivelse;
     document.querySelector(".pris").textContent =
       "Pris: " + billeder.pris + ",-";
+    document.querySelector(".størrelse").textContent =
+      "Størrelse: " + billeder.størrelse;
   }
+
+  // her har jeg tilføjet en EventListener til min tilbaeg knap, med "click" og ved hjælp af "window.history.back() kommer man tilbage den side man sidste var på ergo shop siden."
   document.querySelector(".knap_tilbage").addEventListener("click", () => {
     window.history.back();
   });

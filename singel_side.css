@@ -1,9 +1,5 @@
 /* -------------- */
-#logo_footer {
-  grid-column: 2;
-  /* place-self: normal;
-  padding-left: 32px; */
-}
+
 button {
   background-color: white;
   border: solid 3px #eb7c63;
@@ -19,6 +15,13 @@ button p {
 button:hover {
   background-color: #eb7c63;
   color: white;
+}
+
+.ramme {
+  background-color: white;
+  border: solid 3px #eb7c63;
+  padding: 14px;
+  text-align: center;
 }
 .indkobskurv {
   background-color: white;
@@ -39,14 +42,24 @@ p {
   object-fit: cover;
 }
 .langbeskrivelse {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
-.ramme {
-  margin-bottom: 1rem;
-}
+
 .pris {
   font-weight: bolder;
-  margin-bottom: 00.5rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+.liste {
+  margin-bottom: 20px;
+  display: grid;
+}
+
+.hjerte_svg {
+  width: 9vw;
+  height: auto;
+  margin-top: 4vw;
+  place-self: center;
 }
 /* -------------- */
 @media (min-width: 800px) {
@@ -55,7 +68,7 @@ p {
     width: 400px;
     max-width: 100%;
     aspect-ratio: 16/20;
-    grid-column: 1/3;
+
     grid-row: 1/5;
     place-items: center;
   }
@@ -95,13 +108,13 @@ p {
   .liste {
     grid-row: 10;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     /* grid-template-columns: 2fr 1fr 1fr; */
     grid-gap: 5px;
   }
   .indkobskurv {
     background-color: white;
-    border: solid 3px #eb7c63;
+    border: solid 3px rgb(235, 124, 99);
     padding: 35px;
     place-self: center;
   }
@@ -113,9 +126,17 @@ p {
     grid-row: 1/1;
     grid-column: 2/3;
   }
+
+  .størrelse {
+    grid-column: 2/3;
+    grid-row: 2;
+    place-self: start;
+  }
+
   .pris {
     grid-row: 2/2;
     grid-column: 2/3;
+    margin-top: 3vw;
   }
 
   .ramme {
@@ -125,26 +146,26 @@ p {
   .indkobskurv {
     grid-column: 2/3;
     grid-row: 4/4;
+    place-self: start;
   }
 
   .hjerte_svg {
-    background-image: url(img/heart.svg);
     background-size: cover;
-    width: 5.5vw;
+    width: 5vw;
     height: 5vw;
     border: none;
-    place-self: center end;
+    place-self: start end;
+    margin-top: 0;
 
-    grid-column: 3/3;
+    grid-column: 2/3;
     grid-row: 4/4;
   }
 
   .hjerte_svg:hover {
-    background-image: url(img/red_heart.svg);
-    width: 6vw;
-    height: 6vw;
-
-    place-self: center end;
+    background-image: url(img/heart_red.png);
+    width: 5vw;
+    height: 5vw;
+    place-self: start end;
   }
 }
 @media (min-width: 1000px) {
@@ -157,7 +178,7 @@ p {
   }
 }
 
-@media (min-width: 1356px) {
+@media (min-width: 1330px) {
   .liste {
     grid-row: 10;
     display: grid;

@@ -58,6 +58,7 @@
         <img src="" alt="" />
         <h3></h3>
         <p class="kortbeskrivelse"></p>
+        <p class="størrelse"></p>
         <p class="pris"></p>
       </article>
     </template>
@@ -118,6 +119,7 @@
   const filterKnapper = document.querySelectorAll("nav button");
   const navOverskrift = document.querySelector("h1");
 
+  // Her har jeg url fra vores restdb og dens apikey der gør jeg kan få adgang til det aray der blevet lavet med posters
   const url = "https://tema7-4228.restdb.io/rest/plakater";
   const options = {
     headers: {
@@ -137,6 +139,8 @@
     hentdata();
   }
 
+  // Den her function filtrer min nav menu med de forskellige kategorier posterne har. Den fjerne og tilføjer også en ny class til overskriften i linje 147 til 150 hvor den sørger
+  // for den rigtig overskrift passer til den kategori man har valgt på sin  nav menu.
   function filtrerBilleder() {
     filter = this.dataset.kategori;
     document.querySelector(".valgt").classList.remove("valgt");
@@ -146,6 +150,7 @@
     visListe();
   }
 
+  // Her hentes min json data ind og sendes videre til function visListe
   async function hentdata() {
     const JSONData = await fetch(url, options);
     billeder = await JSONData.json();
@@ -153,26 +158,35 @@
     visListe();
   }
 
+  // VisListe sætter hver enklet poster ind i html og det gør den ved hjælp af den template jeg lavet i min html.
   function visListe() {
+    // Først starter jeg med at tømme min container så der er plads til min data fra mit aray.
     container.textContent = "";
 
-    billeder.forEach((ret) => {
-      if (filter == ret.kategori || filter == "alle") {
+    // her filter den de forskellige psoter i forhold til deres kategori, og sørger for de kommer ind under den rigtig kategorier.
+    // og tilføjer de ting fra aryet som jeg har med i min template.
+    billeder.forEach((plakat) => {
+      if (filter == plakat.kategori || filter == "alle") {
         let klon = temp.cloneNode(true);
 
         klon.querySelector("img").src =
-          "content_billeder/" + ret.billedenavn + ".jpg";
+          "content_billeder/" + plakat.billedenavn + ".jpg";
         klon.querySelector(".kortbeskrivelse").textContent =
-          ret.kortbeskrivelse;
-        klon.querySelector(".pris").textContent = "Pris: " + ret.pris;
+          plakat.kortbeskrivelse;
+        klon.querySelector(".pris").textContent = "Pris: " + plakat.pris;
+        klon.querySelector(".størrelse").textContent =
+          "Størrelse: " + plakat.størrelse;
+
+        // her sætter vi op til den næsste function, med en EventLister (click)
         klon
           .querySelector("#liste")
-          .addEventListener("click", () => visDetaljer(ret));
+          .addEventListener("click", () => visDetaljer(plakat));
 
         container.appendChild(klon);
       }
     });
   }
+  // Denne function gør sådan, at når man klikker på et poster vises den seperat på en ny html side.
   function visDetaljer(hvem) {
     location.href = `singel_side_shop.html?id=${hvem._id}`;
   }

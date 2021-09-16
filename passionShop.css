@@ -1,3 +1,4 @@
+/********** - Regler for for billederne - *****************/
 #liste img {
   display: block;
   width: 400px;
@@ -6,35 +7,14 @@
   aspect-ratio: 16/20;
   border: solid 2px black;
 }
-#menuknap:hover {
-  background-color: none;
-}
-a img:hover {
-  box-shadow: none;
-}
-.box {
-  width: 100%;
-  height: 40px;
-  border: solid 4px #eb7c63;
-}
-.valgt {
-  color: black;
-  background: e4654f;
-}
-
-#liste {
-  max-width: 300px;
-  margin-bottom: 2.5rem;
-  padding: 0.5rem;
-  z-index: 10;
-}
 img:hover {
   box-shadow: 10px 10px 10px #888888;
 }
 
-.logo:hover {
+a img:hover {
   box-shadow: none;
 }
+/* Regler for alle h-tags og p ***********' */
 h1 {
   text-align: center;
   text-transform: uppercase;
@@ -49,21 +29,11 @@ h3 {
   font-weight: 300;
 }
 
-p {
+section p {
   text-align: end;
   padding-top: 9px;
 }
-
-nav {
-  text-align: center;
-}
-.hover_button {
-  margin: 2.5rem;
-}
-.hoved_nav {
-  margin: 0;
-}
-
+/******* Regler for mine filtrings knapper + hover regler *****/
 button {
   background-color: white;
   border: solid 3px #eb7c63;
@@ -79,6 +49,37 @@ button p {
   background-color: #eb7c63;
   color: white;
 }
+nav {
+  text-align: center;
+}
+.hover_button {
+  margin: 2.5rem;
+}
+/* ---------------- */
+
+#menuknap:hover {
+  background-color: none;
+}
+
+.valgt {
+  color: black;
+  background: e4654f;
+}
+
+#liste {
+  max-width: 300px;
+  margin-bottom: 2.5rem;
+  padding: 0.5rem;
+  z-index: 10;
+}
+
+.logo:hover {
+  box-shadow: none;
+}
+
+.hoved_nav {
+  margin: 0;
+}
 
 .data-container {
   display: grid;
@@ -93,20 +94,3 @@ button p {
 .pris {
   font-weight: bolder;
 }
-
-/* #popup {
-  width: 100vw;
-  height: 100vh;
-  background-color: #00000099;
-  position: fixed;
-  top: 0;
-  padding: 2em;
-  display: none;
-}
-
-#popup article {
-  background-color: white;
-  width: 85%;
-} */
-
-/*------------------------ NAV menu med logo -----------------------------------*/

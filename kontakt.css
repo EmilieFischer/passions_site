@@ -7,8 +7,6 @@
 
 #left {
   min-height: 100px;
-  /* display: flex;
-  flex-direction: column;*/
   justify-content: center;
   text-align: left;
   place-self: center;
@@ -29,6 +27,7 @@
   padding-bottom: 30px;
 }
 
+/**** Styling af tekst ****/
 h2 {
   color: #363535;
   font-family: "Urbanist", sans-serif;
@@ -61,6 +60,8 @@ article p {
   padding-right: 20px;
   font-size: 0.8rem;
 }
+
+/**** Styling af tekst done ****/
 
 /*CONTACT FORM START*/
 * {
@@ -159,6 +160,7 @@ textarea {
 
 /*CONTACT FORM DONE*/
 
+/*** Styling af bottom ***/
 #bottom {
   width: 100%;
   background: #eb7c63;
@@ -172,7 +174,4 @@ textarea {
   padding-top: 50px;
   padding-bottom: 50px;
 }
-
-#bottom-container p {
-  font-size: 0.8rem;
-}
+/*** Styling af bottom done ***/

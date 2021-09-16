@@ -6,7 +6,7 @@
   padding: 0 4px;
 }
 
-/* Create four equal columns that sits next to each other */
+/* Opretter to lige store kolonner, der sidder ved siden af ​​hinanden */
 .column {
   flex: 50%;
   max-width: 50%;
@@ -38,6 +38,8 @@ img {
 }
 
 @media (min-width: 700px) {
+  /* Billed grid starter */
+  /* Opretter fire lige store kolonner, der sidder ved siden af ​​hinanden */
   .column {
     flex: 25%;
     max-width: 25%;
@@ -56,17 +58,7 @@ img {
     width: 100%;
   }
 
-  p {
-    padding-top: 0px;
-  }
-
-  img {
-    margin-top: 0px;
-  }
-
-  footer {
-    margin-top: 0px;
-  }
+  /* Billed grid done*/
 
   /* hover på billeder start */
   .container {
@@ -101,4 +93,16 @@ img {
     text-align: center;
   }
   /* hover på billeder done*/
+
+  p {
+    padding-top: 0px;
+  }
+
+  img {
+    margin-top: 0px;
+  }
+
+  footer {
+    margin-top: 0px;
+  }
 }
