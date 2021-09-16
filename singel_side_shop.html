@@ -59,6 +59,8 @@
         <img class="pic" src="" alt="" />
 
         <p class="langbeskrivelse"></p>
+        <p class="størrelse"></p>
+
         <p class="pris" +></p>
         <button class="ramme">Tilføj størrelse</button>
         <p class="indkobskurv">Tilføj til indkøbskurv</p>
@@ -145,6 +147,8 @@
       billeder.langbeskrivelse;
     document.querySelector(".pris").textContent =
       "Pris: " + billeder.pris + ",-";
+    document.querySelector(".størrelse").textContent =
+      "Størrelse: " + billeder.størrelse;
   }
 
   // her har jeg tilføjet en EventListener til min tilbaeg knap, med "click" og ved hjælp af "window.history.back() kommer man tilbage den side man sidste var på ergo shop siden."

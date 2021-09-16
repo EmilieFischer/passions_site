@@ -48,6 +48,7 @@ p {
 .pris {
   font-weight: bolder;
   margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 .liste {
   margin-bottom: 20px;
@@ -125,9 +126,17 @@ p {
     grid-row: 1/1;
     grid-column: 2/3;
   }
+
+  .størrelse {
+    grid-column: 2/3;
+    grid-row: 2;
+    place-self: start;
+  }
+
   .pris {
     grid-row: 2/2;
     grid-column: 2/3;
+    margin-top: 3vw;
   }
 
   .ramme {

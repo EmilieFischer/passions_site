@@ -58,6 +58,7 @@
         <img src="" alt="" />
         <h3></h3>
         <p class="kortbeskrivelse"></p>
+        <p class="størrelse"></p>
         <p class="pris"></p>
       </article>
     </template>
@@ -164,20 +165,22 @@
 
     // her filter den de forskellige psoter i forhold til deres kategori, og sørger for de kommer ind under den rigtig kategorier.
     // og tilføjer de ting fra aryet som jeg har med i min template.
-    billeder.forEach((ret) => {
-      if (filter == ret.kategori || filter == "alle") {
+    billeder.forEach((plakat) => {
+      if (filter == plakat.kategori || filter == "alle") {
         let klon = temp.cloneNode(true);
 
         klon.querySelector("img").src =
-          "content_billeder/" + ret.billedenavn + ".jpg";
+          "content_billeder/" + plakat.billedenavn + ".jpg";
         klon.querySelector(".kortbeskrivelse").textContent =
-          ret.kortbeskrivelse;
-        klon.querySelector(".pris").textContent = "Pris: " + ret.pris;
+          plakat.kortbeskrivelse;
+        klon.querySelector(".pris").textContent = "Pris: " + plakat.pris;
+        klon.querySelector(".størrelse").textContent =
+          "Størrelse: " + plakat.størrelse;
 
         // her sætter vi op til den næsste function, med en EventLister (click)
         klon
           .querySelector("#liste")
-          .addEventListener("click", () => visDetaljer(ret));
+          .addEventListener("click", () => visDetaljer(plakat));
 
         container.appendChild(klon);
       }
